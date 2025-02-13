@@ -17,10 +17,12 @@ import AvatarGroup from '../../ui/AvatarGroup.astro'
 // Content
 // - Hero Image
 import heroImage from '../../../assets/hero-01.png'
+import hero3d from '../../../assets/hero.splinecode'
 // - Avatars
 import user1 from '../../../assets/avatars/avatar-01.webp'
 import user2 from '../../../assets/avatars/avatar-02.webp'
 import user3 from '../../../assets/avatars/avatar-03.webp'
+import Scripts from '../../scripts/LocalScripts.astro'
 const avatars = [
 	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
 	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
@@ -41,15 +43,43 @@ const avatars = [
 			<!-- <Button size="lg" link="/">Get started for free</Button> -->
 		</Col>
 		<Col span="2" />
-		<Col span="2" />
-		<Col span="8">
-			<Image
+		<Col span="12">
+		<link rel="modulepreload" href="https://unpkg.com/@splinetool/runtime@1.9.67/build/runtime.js">
+		<canvas id="canvas3d"></canvas>
+		
+		<div id="preloader">
+			<svg width="64" height="64" viewBox="0 0 64 64" fill="none" id="spinner">
+				<circle cx="32" cy="32" r="30" stroke="url(#paint1_linear)" stroke-opacity="0.4" stroke-width="4" />
+				<defs><linearGradient id="paint1_linear" x1="0" y1="32" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="currentColor" /><stop offset="1" stop-color="currentColor" stop-opacity="0" /></linearGradient></defs>
+			</svg>
+		</div>
+		<script type="module">
+			import { Application } from './runtime.js';
+			
+			const canvas = document.getElementById('canvas3d');
+			const app = new Application(canvas);
+			
+
+			
+
+			const onLoad = () => {
+				
+				
+				preloader.style.display = 'none';
+			}
+
+			const preloader = document.getElementById('preloader');
+			app.load('./hero.splinecode', {}, {
+						credentials: 'include',
+						mode: 'no-cors',
+					}).then(onLoad);
+		</script>
+			<!-- <Image
 				src={heroImage}
 				alt="Foxi. The tailwind astro theme"
 				class="translate-y-8 shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
 				format="webp"
-			/></Col
-		>
-		<Col span="2" />
+			/> -->
+		</Col>
 	</Row>
 </Section>

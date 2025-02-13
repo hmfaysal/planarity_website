@@ -37,9 +37,9 @@ export const footerNavigationData: FooterData = {
 	footerAbout: {
 		title: 'Planarity Enterprises.',
 		aboutText:
-			'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
+			'With Planarity Enterprises, innovation isn’t just a goal—it’s the foundation of everything we do. Ready to turn your vision into reality? Let’s create something remarkable together.',
 		logo: {
-			src: '/logo.svg',
+			src: '/long_logo.svg',
 			alt: 'The tailwind astro theme',
 			text: 'Planarity Enterprises.'
 		}
