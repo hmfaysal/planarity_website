@@ -21,13 +21,13 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Foxi. Tailwind CSS Astro Starter Kit by Oxygenna',
+	siteTitle: 'Planarity Enterprises | Innovate. Build. Elevate.',
 	siteDescription:
-		'Foxi is a design and development agency that specializes in creating beautiful and functional websites.',
+		'At Planarity Enterprises, we don’t just develop software—we craft digital experiences that redefine industries. From concept to execution, our end-to-end software development solutions empower businesses to innovate, scale, and thrive in an ever-evolving digital landscape.',
 	ogImage: '/og.jpg',
 	logo: {
-		src: '/logo.svg',
-		alt: 'Foxi. logo'
+		src: '/long_logo.svg',
+		alt: 'Planarity Enterprises logo'
 	},
 	canonical: true,
 	noindex: false,
