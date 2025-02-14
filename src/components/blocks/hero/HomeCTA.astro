@@ -11,23 +11,22 @@ import Col from '../../ui/Col.astro'
 // - UI
 import ChipNotification from '../../ui/ChipNotification.astro'
 import { Image } from 'astro:assets'
-import Button from '../../ui/Button.astro'
-import AvatarGroup from '../../ui/AvatarGroup.astro'
+// import Button from '../../ui/Button.astro'
+// import AvatarGroup from '../../ui/AvatarGroup.astro'
 
 // Content
 // - Hero Image
-import heroImage from '../../../assets/hero-01.png'
-import hero3d from '../../../assets/hero.splinecode'
+// import heroImage from '../../../assets/hero-01.png'
 // - Avatars
-import user1 from '../../../assets/avatars/avatar-01.webp'
-import user2 from '../../../assets/avatars/avatar-02.webp'
-import user3 from '../../../assets/avatars/avatar-03.webp'
-import Scripts from '../../scripts/LocalScripts.astro'
-const avatars = [
-	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
-	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
-	{ image: { src: user3.src, alt: 'user name' }, link: '/' }
-]
+// import user1 from '../../../assets/avatars/avatar-01.webp'
+// import user2 from '../../../assets/avatars/avatar-02.webp'
+// import user3 from '../../../assets/avatars/avatar-03.webp'
+// import Scripts from '../../scripts/LocalScripts.astro'
+// const avatars = [
+// 	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
+// 	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
+// 	{ image: { src: user3.src, alt: 'user name' }, link: '/' }
+// ]
 ---
 
 <Section id="intro" padding="top" classes="bg-neutral-50 dark:bg-neutral-900">
@@ -54,7 +53,7 @@ const avatars = [
 			</svg>
 		</div>
 		<script type="module">
-			import { Application } from './runtime.js';
+			import { Application } from './scripts/runtime.js';
 			
 			const canvas = document.getElementById('canvas3d');
 			const app = new Application(canvas);
@@ -69,7 +68,7 @@ const avatars = [
 			}
 
 			const preloader = document.getElementById('preloader');
-			app.load('./hero.splinecode', {}, {
+			app.load('./scripts/hero.splinecode', {}, {
 						credentials: 'include',
 						mode: 'no-cors',
 					}).then(onLoad);
