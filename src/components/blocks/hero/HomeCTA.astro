@@ -43,7 +43,7 @@ import { Image } from 'astro:assets'
 		</Col>
 		<Col span="2" />
 		<Col span="12">
-		<link rel="modulepreload" href="https://unpkg.com/@splinetool/runtime@1.9.67/build/runtime.js">
+		<link rel="modulepreload" href="/scripts/runtime.js">
 		<canvas id="canvas3d"></canvas>
 		
 		<div id="preloader">
@@ -68,7 +68,7 @@ import { Image } from 'astro:assets'
 			}
 
 			const preloader = document.getElementById('preloader');
-			app.load('./scripts/hero.splinecode', {}, {
+			app.load('./scripts/ball.splinecode', {}, {
 						credentials: 'include',
 						mode: 'no-cors',
 					}).then(onLoad);
@@ -82,3 +82,40 @@ import { Image } from 'astro:assets'
 		</Col>
 	</Row>
 </Section>
+
+
+<style>
+			canvas {
+				outline: none;
+				display: block;
+			}
+			
+			
+			
+			#preloader {
+				position: absolute;
+				display: flex;
+				top: 0;
+				left: 0;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+				z-index: 3;
+			}
+
+			@keyframes spin {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			#spinner {
+				color: rgba(255, 255, 255, 0.5);
+				animation: spin 1s infinite linear;
+			}
+
+</style>
